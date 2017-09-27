@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -46,5 +47,18 @@ public class Sorter<T extends Number>{ //I used generics so that this class work
         return inputList;
     }
 
+    public ArrayList<T> bogoSort(ArrayList<T> inputList){
+        while(!sorted(inputList)){
+            Collections.shuffle(inputList);
+        }
+        return inputList;
+    }
+
+    public boolean sorted(ArrayList<T> inputList){
+        for(int i = 0; i < inputList.size() - 1; i++){
+            if(inputList.get(i).doubleValue() > inputList.get(i + 1).doubleValue()) return false;
+        }
+        return true;
+    }
 
 }

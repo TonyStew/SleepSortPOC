@@ -10,6 +10,6 @@ public class SortMain {
         list.add(10);
 
         System.out.println(list);
-        System.out.println(new Sorter<Integer>().insertionSort(list));
+        System.out.println(new Sorter<Integer>().bogoSort(list));
     }
 }
