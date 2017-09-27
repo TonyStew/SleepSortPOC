@@ -35,7 +35,16 @@ public class Sorter<T extends Number>{ //I used generics so that this class work
     }
 
     public ArrayList<T> insertionSort(ArrayList<T> inputList){
-
+        for(int i = 1; i < inputList.size(); i++){
+            T t = inputList.get(i);
+            int j;
+            for(j = i - 1; j >= 0 && t.doubleValue() < inputList.get(j).doubleValue(); j--){
+                inputList.set(j + 1, inputList.get(j));
+            }
+            inputList.set(j + 1, t);
+        }
         return inputList;
     }
+
+
 }
