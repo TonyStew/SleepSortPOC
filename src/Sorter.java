@@ -61,5 +61,19 @@ public class Sorter<T extends Number>{ //I used generics so that this class work
         return true;
     }
 
-//    public
+    public ArrayList<T> shellSort(ArrayList<T> inputList) {
+        for(int i = inputList.size()/2; i > 0; i/=2){
+            for(int j = i; j < inputList.size(); j++){
+                T t = inputList.get(j);
+                int k;
+                for(k = j; k >= i && inputList.get(k -1).doubleValue() > t.doubleValue(); k -= i){
+                    inputList.set(k, inputList.get(k - i));
+                }
+                inputList.set(k, t);
+            }
+        }
+        return inputList;
+    }
+
+
 }
