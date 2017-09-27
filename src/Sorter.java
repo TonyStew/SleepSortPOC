@@ -5,7 +5,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Sorter<T extends Number>{ //I used generics so that this class works with floats, longs, etc on top of ints
-    private ArrayList<T> list;
+    private ArrayList<T> list;         //it would have been implements comparable rather than extends number but that does not work for certain sorts like sleep sort
 
     public Sorter(){ list = new ArrayList<>(); }
 
@@ -21,5 +21,17 @@ public class Sorter<T extends Number>{ //I used generics so that this class work
         }
     }
 
+    public ArrayList<T> insertionSort(ArrayList<T> inputList){
+        for(int i = 0; i < inputList.size(); i++){
+            for(int j = i; j > 0; j--){
+                if(inputList.get(j).doubleValue() < inputList.get(j - 1).doubleValue()){
+                    T t = inputList.get(j);
+                    inputList.set(j, inputList.get(j - 1));
+                    inputList.set(j-1, t);
 
+                }
+            }
+        }
+        return inputList;
+    }
 }
