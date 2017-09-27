@@ -21,17 +21,21 @@ public class Sorter<T extends Number>{ //I used generics so that this class work
         }
     }
 
-    public ArrayList<T> insertionSort(ArrayList<T> inputList){
+    public ArrayList<T> bubbleSort(ArrayList<T> inputList){
         for(int i = 0; i < inputList.size(); i++){
             for(int j = i; j > 0; j--){
                 if(inputList.get(j).doubleValue() < inputList.get(j - 1).doubleValue()){
                     T t = inputList.get(j);
                     inputList.set(j, inputList.get(j - 1));
                     inputList.set(j-1, t);
-
                 }
             }
         }
+        return inputList;
+    }
+
+    public ArrayList<T> insertionSort(ArrayList<T> inputList){
+
         return inputList;
     }
 }
