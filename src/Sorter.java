@@ -75,5 +75,36 @@ public class Sorter<T extends Number>{ //I used generics so that this class work
         return inputList;
     }
 
+    public ArrayList<T> gnomeSort(ArrayList<T> inputList){
+        int i = 1, j = 2;
+        while(i < inputList.size()){
+            if(inputList.get(i -1).doubleValue() <= inputList.get(i).doubleValue()) i = j++;
+            else{
+                T t = inputList.get(i - 1);
+                inputList.set(i - 1, inputList.get(i));
+                inputList.set(i--, t);
+                i = i == 0 ? j++ : i;
+            }
+        }
+        return inputList;
+    }
 
+//    public ArrayList<Integer> radixSort(ArrayList<Integer> inputList) { //unfortunately bitwise operators only work on ints so I cannot use generics without a lot of work
+//        for (int shift = Integer.SIZE - 1; shift > -1; shift--) {
+//            ArrayList<Integer> tmp = new ArrayList<>();
+//            int j = 0;
+//            for (int i = 0; i < inputList.size(); i++) {
+//                boolean move = inputList.set(i, inputList.get(i) << shift) >= 0;
+//                if (shift == 0 ? !move : move) {
+//                    tmp.add(j, inputList.get(i));
+//                    j++;
+//                } else inputList.set(i - j, inputList.get(i));
+//            }
+//            for (int i = j; i < tmp.size(); i++) {
+//                tmp.set(i, inputList.get(i - j));
+//            }
+//            inputList = tmp;
+//        }
+//        return inputList;
+//    }
 }

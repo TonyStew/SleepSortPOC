@@ -10,10 +10,13 @@ public class SortMain {
         ArrayList<Long> list4 = new ArrayList<>(Arrays.asList(999999999999999999l, 552l, 2l, 103l));
         ArrayList<Integer> list5 = new ArrayList<>(Arrays.asList(-4, -24, 735, 734 , 1, 6, 8, 45, 345, 2, 2, -9, -2345, -1, 5234, 2, 113, 654, 765, 84, 3, 23,45, 6345, 7));
 
-        System.out.println(new Sorter<Integer>().sorted(new Sorter<Integer>().shellSort(list1))); //test cases
-        System.out.println(new Sorter<Integer>().sorted(new Sorter<Integer>().shellSort(list2)));
-        System.out.println(new Sorter<Double>().sorted(new Sorter<Double>().shellSort(list3)));
-        System.out.println(new Sorter<Long>().sorted(new Sorter<Long>().shellSort(list4)));
-        System.out.println(new Sorter<Integer>().sorted(new Sorter<Integer>().shellSort(list5)));
+//        System.out.println(list1);
+//        System.out.println(new Sorter<Integer>().radixSort(list1));
+
+        System.out.println(new Sorter<Integer>().sorted(new Sorter<Integer>().gnomeSort(list1))); //test cases
+        System.out.println(new Sorter<Integer>().sorted(new Sorter<Integer>().gnomeSort(list2)));
+        System.out.println(new Sorter<Double>().sorted(new Sorter<Double>().gnomeSort(list3)));
+        System.out.println(new Sorter<Long>().sorted(new Sorter<Long>().gnomeSort(list4)));
+        System.out.println(new Sorter<Integer>().sorted(new Sorter<Integer>().gnomeSort(list5)));
     }
 }
